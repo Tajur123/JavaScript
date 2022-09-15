@@ -1,0 +1,105 @@
+
+<h3 align="center">Daftar Pegawai</h3>
+		<table align="center" cellpadding="10" width="40%">
+			<thead>
+				<tr bgcolor="tomato">
+					<th>NO</th>
+					<th>NAMA</th>
+					<th>JABATAN</th>
+                    <th>AGAMA</th>
+                    <th>GAJI POKOK</th>
+                    <th>TUNJANGAN JABATAN</th>
+                    <th>TUNJANGAN KESEHATAN</th>
+                    <th>GAJI KOTOR</th>
+                    <th>ZAKAT PROFESI</th>
+                    <th>TAKE HOME PAY</th>
+				</tr>
+			</thead>
+			<tbody>
+                <script language="javascript">
+                var  warna, agama, gaji_pokok, jabatan, tunjangan, tunkes, gaji_kotor, zakat_profesi;
+                
+              
+                 
+
+                for(no = 1; no <= 100; no++){
+                    warna = (no % 2 == 0) ? 'yellow' :'aqua';
+                    agama = (no % 2 == 0) ? 'muslim' :'nonmuslim,';
+                    
+                   
+                    if( no >= 1 && no <= 25)
+                    {
+                        jabatan = 'Manajer'
+                        gaji_pokok = 15000000;
+                        tunjangan = (gaji_pokok / 100 ) * 20;
+                        tunkes = (gaji_pokok / 100 ) * 10;
+                        gaji_kotor = gaji_pokok + tunjangan + tunkes;
+                        zakat_profesi = gaji_kotor / 250;
+                        if(agama == 'muslim' && gaji_kotor >= 7000000)
+                        {
+                            zakat_profesi = (gaji_kotor / 100 ) * 2.5;
+                        }
+                        
+                        else{
+                            zakat_profesi = 0;
+                        }
+                       
+
+                    }
+                    else if (no > 25 && no <=50)
+                    {
+                        jabatan = 'asisten manager';
+                        gaji_pokok = 10000000;
+                        tunjangan = (gaji_pokok / 100 ) * 20;
+                        tunkes = (gaji_pokok / 100 ) * 10;
+                        gaji_kotor = gaji_pokok + tunjangan + tunkes;
+                        if(agama == 'muslim' && gaji_kotor >= 7000000)
+                        {
+                            zakat_profesi = (gaji_kotor / 100 ) * 2.5;
+                        }
+                        
+                        else{
+                            zakat_profesi = 0;
+                        }
+                    }
+                    else if (no > 50 && no <=75)
+                    {
+                        jabatan = 'Supervisor';
+                        gaji_pokok = 7000000;
+                        tunjangan = (gaji_pokok / 100 ) * 20;
+                        tunkes = (gaji_pokok / 100 ) * 10;
+                        gaji_kotor = gaji_pokok + tunjangan + tunkes;
+                        if(agama == 'muslim' && gaji_kotor >= 7000000)
+                        {
+                            zakat_profesi = (gaji_kotor / 100 ) * 2.5;
+                        }
+                        else{
+                            zakat_profesi = 0;
+                        }
+                    }
+                    else{
+                        jabatan = 'staff';
+                        gaji_pokok= 4000000;
+                        tunjangan = (gaji_pokok / 100 ) * 20;
+                        tunkes = (gaji_pokok / 100 ) * 10;
+                        gaji_kotor = gaji_pokok + tunjangan + tunkes;
+                    }
+                    
+                    
+                    document.write(`<tr bgcolor="${warna}">
+                        <td>${no}</td>
+                        <td>PEGAWAI${no}</td>
+                        <td>${jabatan}</td>
+                        <td>${agama}</td>
+                        <td>${gaji_pokok}</td>
+                        <td>${tunjangan}</td>
+                        <td>${tunkes}</td>
+                        <td>${gaji_kotor}</td>
+                        <td>${zakat_profesi}</td>
+                        <td>${gaji_kotor - zakat_profesi}</td>
+                       
+                    </tr>`);
+                }    
+                </script>
+			</tbody>
+		</table>_
